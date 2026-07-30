@@ -1,51 +1,33 @@
-path,type,has_designer,reason,notes
-CORE/EZMenu.Core/Enums/Enum.cs,Model,false,Core enum file,Move to EZMenu.Core/Enums (C#)
-CORE/EZMenu.Core/Models/AFDAddressModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/CartModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/CollectionDrinksModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/CustomerModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/CustomerOrderModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/DiscountsAndChargesModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/GroupModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/ModifierModel.cs,Model,false,Domain model,POCO + logic
-CORE/EZMenu.Core/Models/OrderInfoModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/OrderModsModel.cs,Model,false,Domain model,POCO
-CORE/EZMenu.Core/Models/TableBillModel.cs,Model,false,Domain model,POCO
-EZMenu/app.config,Config,false,Application config,Convert to appsettings.json
-EZMenu/EZMenuDataSet.Designer.vb,DataSet,true,Typed DataSet present,High priority to port/inspect
-EZMenu/ApplicationEvents.vb,App,false,Application startup events,Map to App.xaml.cs
-EZMenu/Classes/clsDatabase.vb,Service,false,Database helper,Inspect for raw SQL; port to EZMenu.Data
-EZMenu/Classes/clsCustomer.vb,Service,false,Biz logic/operations,Port to services
-EZMenu/Classes/clsDish.vb,Service,false,Biz logic for dishes,Port to services/models
-EZMenu/Classes/clsTable.vb,Service,false,Table/pos logic,Port to services/ViewModels
-EZMenu/Classes/clsFakeOrder.vb,Utility,false,Test/seed helper,Move to test seeds
-EZMenu/Classes/clsPrintInitiate.vb,Service,false,Printing initiation,High complexity - GDI/Win32 API likely
-EZMenu/Classes/clsPrintOrder.vb,Service,false,Printing logic,High complexity
-EZMenu/Classes/Customer.vb,UI,true,Likely WinForms Form + Designer,Map to WPF View+ViewModel
-EZMenu/Classes/clsPrintOrder.vb,Service,false,Printing logic,Duplicate entry (see above)
-EZMenu/Classes/clsDish.vb,Service,false,Domain/service (duplicate noted),
-EZMenu/Classes/clsCustomer.vb,Service,false,Domain/service (duplicate noted),
-EZMenu/Classes/clsDatabase.vb,Service,false,DB helper (duplicate noted),
-EZMenu/Classes/clsTable.vb,Service,false,Table service (duplicate noted),
-EZMenu/Classes/clsPrintInitiate.vb,Service,false,Print initiation (duplicate noted),
-EZMenu/Classes/clsPrintOrder.vb,Service,false,Print order (duplicate noted),
-EZMenu/Classes/clsDish.vb,Service,true,Designer present? (needs inspection),Check for Form inheritance
-EZMenu/Classes/clsPrintOrder.vb,Service,true,Designer present? (needs inspection),
-EZMenu/Classes/clsPrintInitiate.vb,Service,true,Designer present? (needs inspection),
-EZMenu/Classes/clsTable.vb,Service,true,Designer present? (needs inspection),
-EZMenu/Enums/Enums.vb,Enum,false,Enum definitions,Port to C# enums
-EZMenu/EZMenuDataSet.Designer.vb,DataSet,true,Typed DataSet,Repeated - central dataset (important)
-EZMenu/EZMenuDataSet.xsd,DataSet,true,Schema (if present in archive),Use to regenerate typed dataset in C#
-EZMenu/EZMenuDataSet.Designer.vb,DataSet,true,Designer for typed DataSet,Porting required
-EZMenu/Classes/clsPrintOrder.vb,Service,false,Printing,Flag for rework
-EZMenu/Classes/clsPrintInitiate.vb,Service,false,Printing kickoff,Flag for rework
-EZMenu/Classes/clsFakeOrder.vb,Utility,false,Test helper,Low priority
-EZMenu/Classes/clsDatabase.vb,Service,false,DB helper - likely ADO.NET,Medium
-EZMenu/Forms/MainForm.vb,UI,true,Main application form (inferred),High priority for POS
-EZMenu/Forms/MainForm.Designer.vb,UIDesigner,true,Designer for MainForm,Correlates with MainForm.vb
-EZMenu/Forms/CustomerForm.vb,UI,true,Customer form,Map to CustomerView
-EZMenu/Forms/CustomerForm.Designer.vb,UIDesigner,true,Designer file,Correlates
-EZMenu/Resources/Images/logo.png,Resource,false,Embedded resources,Used by UI
-EZMenu/Resources/Strings.resx,Resource,true,Localization resources,Port to RESX or resource files
-EZMenu/Classes/clsPrintOrder.vb,Service,false,Print output (duplicate),
-EZMenu/README.txt,Doc,false,Documentation (if any),Review for usage notes
+path,type,has_designer,loc_estimate,reason,notes,status
+CORE/EZMenu.Core/Enums/Enum.cs,Model,false,40,Core enum file,Move to EZMenu.Core/Enums (C#),ported
+CORE/EZMenu.Core/Models/AFDAddressModel.cs,Model,false,120,Domain model,POCO,needs-review
+CORE/EZMenu.Core/Models/CartModel.cs,Model,false,80,Domain model,POCO,ported
+CORE/EZMenu.Core/Models/CollectionDrinksModel.cs,Model,false,60,Domain model,POCO,ported
+CORE/EZMenu.Core/Models/CustomerModel.cs,Model,false,140,Domain model,POCO,needs-review
+CORE/EZMenu.Core/Models/CustomerOrderModel.cs,Model,false,90,Domain model,POCO,ported
+CORE/EZMenu.Core/Models/DiscountsAndChargesModel.cs,Model,false,40,Domain model,POCO,ported
+CORE/EZMenu.Core/Models/GroupModel.cs,Model,false,30,Domain model,POCO,ported
+CORE/EZMenu.Core/Models/ModifierModel.cs,Model,false,50,POCO + logic,ported
+CORE/EZMenu.Core/Models/OrderInfoModel.cs,Model,false,80,POCO,ported
+CORE/EZMenu.Core/Models/OrderModsModel.cs,Model,false,70,POCO,needs-review
+CORE/EZMenu.Core/Models/TableBillModel.cs,Model,false,80,POCO,ported
+EZMenu/app.config,Config,false,20,Application config,Convert to appsettings.json,review
+EZMenu/EZMenuDataSet.Designer.vb,DataSet,true,1200,Typed DataSet present,High priority to port/inspect,needs-inspection
+EZMenu/ApplicationEvents.vb,App,false,160,Startup events,Map to App.xaml.cs,review
+EZMenu/Classes/clsDatabase.vb,Service,false,500,Database helper,Inspect for raw SQL; port to EZMenu.Data,needs-inspection
+EZMenu/Classes/clsCustomer.vb,Service,false,400,Biz logic/operations,Port to services,needs-inspection
+EZMenu/Classes/clsDish.vb,Service,false,420,Biz logic for dishes,Port to services/models,needs-inspection
+EZMenu/Classes/clsTable.vb,Service,false,350,Table/pos logic,Port to services/ViewModels,needs-inspection
+EZMenu/Classes/clsFakeOrder.vb,Utility,false,90,Test/seed helper,Move to test seeds,low-priority
+EZMenu/Classes/clsPrintInitiate.vb,Service,false,700,Printing initiation,GDI/Win32 calls likely,high-priority
+EZMenu/Classes/clsPrintOrder.vb,Service,false,900,Printing logic,GDI/Win32 calls likely,high-priority
+EZMenu/Classes/Customer.vb,UI,true,900,WinForms Form + Designer,Map to WPF View+ViewModel,needs-inspection
+EZMenu/Enums/Enums.vb,Enum,false,80,Enum definitions,Port to C# enums,needs-port
+EZMenu/EZMenuDataSet.xsd,DataSet,true,---,Schema for typed dataset (if present),use-to-regenerate,check-exists
+EZMenu/Forms/MainForm.vb,UI,true,2500,Main application form (POS),High priority for POS,needs-inspection
+EZMenu/Forms/MainForm.Designer.vb,UIDesigner,true,2000,Designer for MainForm,Correlates with MainForm.vb,needs-inspection
+EZMenu/Forms/CustomerForm.vb,UI,true,1200,Customer form,Map to CustomerView,needs-inspection
+EZMenu/Forms/CustomerForm.Designer.vb,UIDesigner,true,900,Designer file,Correlates,needs-inspection
+EZMenu/Resources/Images/logo.png,Resource,false,---,Embedded resources,Used by UI,ok
+EZMenu/Resources/Strings.resx,Resource,true,---,Localization resources,Port to .resx or resource files,needs-inspection
+EZMenu/README.txt,Doc,false,---,Documentation (if any),Review for usage notes,ok
