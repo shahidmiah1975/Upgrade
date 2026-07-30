@@ -1,0 +1,45 @@
+steps:
+- name: Checkout
+  uses: actions/checkout@v4
+
+- name: Setup .NET
+  uses: actions/setup-dotnet@v3
+  with:
+    dotnet-version: '10.0.x'
+
+- name: Find solution file
+  id: find_sln
+  run: |
+    set -e
+    sln=$(ls *.sln 2>/dev/null || true)
+    if [ -z "$sln" ]; then
+      sln=$(find . -maxdepth 5 -name "*.sln" | head -n1 || true)
+    fi
+    if [ -z "$sln" ]; then
+      echo "no_sln=true" >> $GITHUB_OUTPUT
+      echo "No solution file found; build steps will be skipped."
+    else
+      echo "solution=$sln" >> $GITHUB_OUTPUT
+      echo "Found solution: $sln"
+    fi
+
+- name: Restore NuGet packages
+  if: steps.find_sln.outputs.no_sln != 'true'
+  run: dotnet restore "${{ steps.find_sln.outputs.solution }}"
+
+- name: Build solution
+  if: steps.find_sln.outputs.no_sln != 'true'
+  run: dotnet build "${{ steps.find_sln.outputs.solution }}" --configuration Release --no-restore
+
+- name: Run tests (if any)
+  if: steps.find_sln.outputs.no_sln != 'true'
+  run: |
+    set -e || true
+    tests=$(find . -type f -name "*Tests*.csproj" -or -name "*Test*.csproj" | tr '\n' ' ')
+    if [ -z "$tests" ]; then
+      echo "No test projects found; skipping tests."
+    else
+      for t in $tests; do
+        dotnet test "$t" --no-build --verbosity normal
+      done
+    fi
