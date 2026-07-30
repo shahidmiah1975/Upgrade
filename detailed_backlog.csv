@@ -1,0 +1,25 @@
+File,Type,HasDesigner,SuggestedTarget,Complexity,Notes
+CORE/EZMenu.Core/Enums/Enum.cs,Model,false,EZMenu.Core/Enums/Enum.cs,Low,Domain enum file
+CORE/EZMenu.Core/Models/AFDAddressModel.cs,Model,false,EZMenu.Core/Models/AFDAddressModel.cs,Low,POCO
+CORE/EZMenu.Core/Models/CartModel.cs,Model,false,EZMenu.Core/Models/CartModel.cs,Low,POCO
+CORE/EZMenu.Core/Models/CollectionDrinksModel.cs,Model,false,EZMenu.Core/Models/CollectionDrinksModel.cs,Low,POCO
+CORE/EZMenu.Core/Models/CustomerModel.cs,Model,false,EZMenu.Core/Models/CustomerModel.cs,Low,POCO
+CORE/EZMenu.Core/Models/CustomerOrderModel.cs,Model,false,EZMenu.Core/Models/CustomerOrderModel.cs,Low,POCO
+CORE/EZMenu.Core/Models/DiscountsAndChargesModel.cs,Model,false,EZMenu.Core/Models/DiscountsAndChargesModel.cs,Low-Medium,POCO
+CORE/EZMenu.Core/Models/GroupModel.cs,Model,false,EZMenu.Core/Models/GroupModel.cs,Low,POCO
+CORE/EZMenu.Core/Models/ModifierModel.cs,Model,false,EZMenu.Core/Models/ModifierModel.cs,Low-Medium,POCO + small logic
+CORE/EZMenu.Core/Models/OrderInfoModel.cs,Model,false,EZMenu.Core/Models/OrderInfoModel.cs,Low-Medium,POCO
+CORE/EZMenu.Core/Models/OrderModsModel.cs,Model,false,EZMenu.Core/Models/OrderModsModel.cs,Low-Medium,POCO
+CORE/EZMenu.Core/Models/TableBillModel.cs,Model,false,EZMenu.Core/Models/TableBillModel.cs,Low-Medium,POCO
+EZMenu/app.config,Config,false,EZMenu.UI.Wpf/appsettings.json,Low,Convert to JSON
+EZMenu/EZMenuDataSet.Designer.vb,DataSet,true,EZMenu.Data/EZMenuDataSet.*,Medium,Typed DataSet - port to C# and plan refactor
+EZMenu/ApplicationEvents.vb,App,false,EZMenu.UI.Wpf/App.xaml.cs,Low-Medium,Startup wiring
+EZMenu/Classes/clsDatabase.vb,Service,false,EZMenu.Data/DatabaseService.cs,Medium,DB helper - inspect SQL
+EZMenu/Classes/clsCustomer.vb,Service,false,EZMenu.Services/CustomerService.cs,Low-Medium,Biz logic
+EZMenu/Classes/clsDish.vb,Service,false,EZMenu.Services/DishService.cs,Low-Medium,Biz logic
+EZMenu/Classes/clsTable.vb,Service,false,EZMenu.Services/TableService.cs,Medium,POS table logic
+EZMenu/Classes/clsFakeOrder.vb,Utility,false,tests/Seed/FakeOrderSeeder.cs,Low,Test seeding
+EZMenu/Classes/clsPrintInitiate.vb,Service,false,EZMenu.Services/PrintService.cs,High,Printing rework
+EZMenu/Classes/clsPrintOrder.vb,Service,false,EZMenu.Services/PrintService.cs,High,Printing rework
+EZMenu/Classes/Customer.vb,UI,true,EZMenu.UI.Wpf/Views/CustomerView.xaml,Medium,WinForms --> WPF form
+EZMenu/Enums/Enums.vb,Enum,false,EZMenu.Core/Enums/*.cs,Low,Convert to C# enums

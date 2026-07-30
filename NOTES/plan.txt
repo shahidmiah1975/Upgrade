@@ -1,0 +1,9 @@
+I am starting a full extraction and analysis run now. I will:
+
+- enumerate every file in EZMenu.zip and classify it (Form vs Designer vs Model vs Service)
+- detect which .vb files inherit from System.Windows.Forms.Form
+- detect presence of .resx and .Designer.vb for UI mapping
+- create a detailed CSV with lines of code, references to ADO.NET/typed DataSets, and third-party controls
+- commit that CSV to migrate/ezmenu-wpf-poc
+
+I’ll push the first detailed file list next.
